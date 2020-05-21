@@ -31,10 +31,14 @@
                     $('#names-q1').html('');
                     let rows = response["RealtimeCityAir"]["row"]
                     for (let i = 0; i < rows.length; i++) {
-                        let index_mvl = rows['IDEX_MVL'];
-                        let gu_name = rows['MSRSTE_NM'];
-                        let html = `<li> ${gu_name} : ${index_mvl}</li>`;
-
+                        let index_mvl = rows[i]['IDEX_MVL'];
+                        let gu_name = rows[i]['MSRSTE_NM'];
+                        let html=''
+                        if(index_mvl>=70){
+                            html = `<li class="red"> ${gu_name} : ${index_mvl}</li>`;
+                        }else{
+                            html = `<li> ${gu_name} : ${index_mvl}</li>`;}
+                        
                         $('#names-q1').append(html);
                     }
                 }
