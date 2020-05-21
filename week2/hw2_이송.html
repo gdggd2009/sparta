@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+    <link href="https://fonts.googleapis.com/css2?family=Stylish&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: 'Stylish', sans-serif;
+        }
+
+        .text_head {
+            font-size: xx-large;
+        }
+
+        .text_price {
+            font-size: large;
+        }
+
+        .text_comment {
+            font-size: large;
+        }
+
+        .set {
+            width: 450px;
+            margin: auto;
+            font-size: large;
+        }
+
+        .buttonset {
+            margin: auto;
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card set" style="width: 28rem;">
+        <img class="card-img-top"
+            src="data:image/jpeg;base64,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"
+            alt="표시불가">
+        <div class="card-body">
+            <h5 style="text-align:center" class="card-title text_head">아이스 아메리카노</h5>
+            <p class="card-text text_comment">아이스 아메리카노는 당신에게 업무효율성 증진과 내구성 유지를 제공합니다. 상기와 같은 효과를 통해 당신의 삶이 더 합리적이고 생산적인
+                느낌으로 채워질 것입니다.</p>
+            <p style="text-align: right" class="card-text text_price">가격 : 4,300원</p>
+        </div>
+    </div>
+    <br>
+    <div class="input-group mb-3 set">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">주문자성함</span>
+        </div>
+        <input type="text" class="form-control" placeholder="고객명 또는 별명칸" aria-label="Username"
+            aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group mb-3 set">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">사이즈</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01">
+            <option selected>선택...</option>
+            <option value="1">레귤러</option>
+            <option value="2">그란데</option>
+            <option value="3">벤티</option>
+        </select>
+    </div>
+
+    <div class="input-group mb-3 set">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">이용형태</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01">
+            <option selected>선택...</option>
+            <option value="1">매장</option>
+            <option value="2">테이크아웃</option>
+        </select>
+    </div>
+
+    <div class="input-group set">
+        <div class="input-group-prepend">
+            <span class="input-group-text">고객 요청사항</span>
+        </div>
+        <textarea class="form-control" aria-label="With textarea"></textarea>
+    </div>
+    <br>
+    <div>
+        <center>
+            <button type="button" class="btn btn-primary buttonset" onclick="button_click();">주문하기</button>
+            <script>
+                function button_click() {
+                    alert("주문이 완료되었습니다.")
+                }
+            </script>
+        </center>
+    </div>
+</body>
+
+</html>
