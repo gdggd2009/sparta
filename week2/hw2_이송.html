@@ -65,6 +65,7 @@
             <p class="card-text text_comment">아이스 아메리카노는 당신에게 업무효율성 증진과 내구성 유지를 제공합니다. 상기와 같은 효과를 통해 당신의 삶이 더 합리적이고 생산적인
                 느낌으로 채워질 것입니다.</p>
             <p style="text-align: right" class="card-text text_price">가격 : 4,300원</p>
+            <p style="text-align: right" class="card-text text_price" id="ex"> </p>
         </div>
     </div>
     <br>
@@ -110,8 +111,6 @@
             <script>
                 function button_click() {
                     let name = $('#name').val();
-                    let size = $('#size').val();
-                    let area = $('#area').val();
                     if (name == '') {
                         alert("이름을 입력해주세요.");
                         return;
@@ -121,6 +120,20 @@
             </script>
         </center>
     </div>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "https://api.manana.kr/exchange/rate.json",
+                data: {},
+                success: function (response) {
+                    let result = response[1]['rate'];
+                    let result2 = `환율 : ${result} 원/달러`
+                    $('#ex').text(result2);
+                }
+            })
+        });
+    </script>
 </body>
 
 </html>
