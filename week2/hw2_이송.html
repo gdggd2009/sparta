@@ -72,7 +72,7 @@
         <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">주문자성함</span>
         </div>
-        <input type="text" class="form-control" placeholder="고객명 또는 별명칸" aria-label="Username"
+        <input type="text" class="form-control" id="name" placeholder="고객명 또는 별명칸" aria-label="Username"
             aria-describedby="basic-addon1">
     </div>
 
@@ -81,8 +81,7 @@
             <label class="input-group-text" for="inputGroupSelect01">사이즈</label>
         </div>
         <select class="custom-select" id="inputGroupSelect01">
-            <option selected>선택...</option>
-            <option value="1">레귤러</option>
+            <option selected value="1">레귤러</option>
             <option value="2">그란데</option>
             <option value="3">벤티</option>
         </select>
@@ -93,8 +92,7 @@
             <label class="input-group-text" for="inputGroupSelect01">이용형태</label>
         </div>
         <select class="custom-select" id="inputGroupSelect01">
-            <option selected>선택...</option>
-            <option value="1">매장</option>
+            <option selected value="1">매장</option>
             <option value="2">테이크아웃</option>
         </select>
     </div>
@@ -111,6 +109,13 @@
             <button type="button" class="btn btn-primary buttonset" onclick="button_click();">주문하기</button>
             <script>
                 function button_click() {
+                    let name = $('#name').val();
+                    let size = $('#size').val();
+                    let area = $('#area').val();
+                    if (name == '') {
+                        alert("이름을 입력해주세요.");
+                        return;
+                    }
                     alert("주문이 완료되었습니다.")
                 }
             </script>
