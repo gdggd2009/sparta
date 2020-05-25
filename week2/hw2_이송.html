@@ -82,7 +82,8 @@
             <label class="input-group-text" for="inputGroupSelect01">사이즈</label>
         </div>
         <select class="custom-select" id="inputGroupSelect01">
-            <option selected value="1">레귤러</option>
+            <option selected id="noselect">선택...</option>
+            <option value="1">레귤러</option>
             <option value="2">그란데</option>
             <option value="3">벤티</option>
         </select>
@@ -90,10 +91,11 @@
 
     <div class="input-group mb-3 set">
         <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">이용형태</label>
+            <label class="input-group-text" for="inputGroupSelect02">이용형태</label>
         </div>
-        <select class="custom-select" id="inputGroupSelect01">
-            <option selected value="1">매장</option>
+        <select class="custom-select" id="inputGroupSelect02">
+            <option selected>선택...</option>
+            <option value="1">매장</option>
             <option value="2">테이크아웃</option>
         </select>
     </div>
@@ -102,7 +104,7 @@
         <div class="input-group-prepend">
             <span class="input-group-text">고객 요청사항</span>
         </div>
-        <textarea class="form-control" aria-label="With textarea"></textarea>
+        <textarea class="form-control" aria-label="With textarea" id=blank></textarea>
     </div>
     <br>
     <div>
@@ -111,29 +113,43 @@
             <script>
                 function button_click() {
                     let name = $('#name').val();
+                    let noselect1 = $('#inputGroupSelect01').val();
+                    let noselect2 = $('#inputGroupSelect02').val();
+                    let blank = $('#blank').val();
                     if (name == '') {
                         alert("이름을 입력해주세요.");
+                        return;
+                    } 
+                    if(noselect1 == '선택...'){
+                        alert("선택해주세요.");
+                        return;
+                    } 
+                    if(noselect2 == '선택...'){
+                        alert("선택해주세요.");
+                        return;
+                    }
+                    if(blank == ''){
+                        alert("고객요청사항을 기재하세요.")
                         return;
                     }
                     alert("주문이 완료되었습니다.")
                 }
+
+                $(document).ready(function () {
+                    $.ajax({
+                        type: "GET",
+                        url: "https://api.manana.kr/exchange/rate.json",
+                        data: {},
+                        success: function (response) {
+                            let result = response[1]['rate'];
+                            let result2 = `환율 : ${result} 원/달러`
+                            $('#ex').text(result2);
+                        }
+                    })
+                });
             </script>
         </center>
     </div>
-    <script>
-        $(document).ready(function () {
-            $.ajax({
-                type: "GET",
-                url: "https://api.manana.kr/exchange/rate.json",
-                data: {},
-                success: function (response) {
-                    let result = response[1]['rate'];
-                    let result2 = `환율 : ${result} 원/달러`
-                    $('#ex').text(result2);
-                }
-            })
-        });
-    </script>
 </body>
 
 </html>
