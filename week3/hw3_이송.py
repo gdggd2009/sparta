@@ -14,6 +14,8 @@ soup = BeautifulSoup(data.text, 'html.parser')
 
 trs = soup.select('#body-content > div.newest-list > div > table > tbody > tr')
 
+# 과제물 특정을 위한 주석추가
+
 for tr in trs:
         rank = tr.select_one('td.number').text
         title = tr.select_one('td.info > a.title.ellipsis').text
